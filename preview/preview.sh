@@ -7,7 +7,7 @@
 dateStr=$(ls -tr *.DVR.mp4 | awk '{print $4}' | tail -n 1);
 
 # Loop through all mp4 files in the directory newest first
-for file in *$dateStr*.mp4; do
+for file in *$dateStr*.DVR.mp4; do
    echo "Found file: $file";
 
    # Get the time of the video file
