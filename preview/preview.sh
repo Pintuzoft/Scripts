@@ -4,7 +4,7 @@
 # 
 
 # Get the date of the newest video file
-dateStr=$(ls -tr *.mp4 | awk '{print $4}' | tail -n 1);
+dateStr=$(ls -tr *.DVR.mp4 | awk '{print $4}' | tail -n 1);
 
 # Loop through all mp4 files in the directory newest first
 for file in *$dateStr*.mp4; do
@@ -33,4 +33,8 @@ for file in *$dateStr*.mp4; do
    # Rename file
    mv "${file}" "${newName}"
 done
+
+# Remove files that was flagged to get removed
+rm -vf *tabort*
+rm -vf *remove*
 
